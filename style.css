@@ -1,0 +1,150 @@
+:root {
+  --dark: #454549;
+  --light: #fff;
+  --mist: #eee;
+  --shadow: rgba(0,0,0,.4);
+  --accent: #000000;
+  --line: .15ch;
+  --line-color: var(--dark);
+}
+
+.content {
+  flex: 0 0 100%;
+  padding: 1em;
+  overflow: auto;
+  will-change: transform;
+  transform: translateX(0%);
+  transition: transform 0.3s ease-out;
+}
+
+[step="2"] .content {
+  transform: translateX(-100%);
+}
+
+[step="3"] .content {
+  transform: translateX(-200%);
+}
+
+[step="4"] .content {
+  transform: translateX(-300%);
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  flex: 1;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+article {
+  width: 50vw;
+  height: 50vh;
+  min-width: 20em;
+  min-height: 15em;
+  border: var(--line) solid var(--line-color);
+  border-radius: 0.3em;
+  overflow: hidden;
+  background: var(--light);
+  box-shadow: 0 1em 3em -1em var(--shadow);
+}
+
+header {
+  padding: 1em;
+  border-bottom: var(--line) solid var(--line-color);
+  background: var(--accent);
+  color: var(--light);
+}
+
+footer {
+  flex: none;
+  border-top: var(--line) solid var(--line-color);
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  background: var(--mist);
+}
+footer button {
+  border-radius: 0;
+}
+
+button {
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  border-radius: 0.2em;
+  padding: 0.65em 1.3em;
+  background: var(--dark);
+  color: var(--light);
+  opacity: 1;
+  outline: none;
+  cursor: pointer;
+}
+button[disabled] {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+button[disabled].cancel {
+  color: inherit;
+}
+button.primary:not([disabled]) {
+  background: var(--accent);
+}
+button.cancel {
+  background: transparent;
+  color: var(--accent);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+h3 {
+  font-weight: 200;
+  opacity: 0.7;
+}
+
+h3, h4, p {
+  margin: 0;
+}
+h3 + *, h4 + *, p + * {
+  margin-top: 1em;
+}
+/*
+██████╗  ██████╗ ██╗   ██╗███████╗██╗  ██╗ █████╗ ███╗   ██╗     ██████╗ █████╗ ██████╗ ██████╗ ████████╗
+██╔═══██╗██╔════╝ ██║   ██║╚══███╔╝██║  ██║██╔══██╗████╗  ██║    ██╔════╝██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝
+██║   ██║██║  ███╗██║   ██║  ███╔╝ ███████║███████║██╔██╗ ██║    ██║     ███████║██████╔╝██████╔╝   ██║   
+██║   ██║██║   ██║██║   ██║ ███╔╝  ██╔══██║██╔══██║██║╚██╗██║    ██║     ██╔══██║██╔══██╗██╔══██╗   ██║   
+╚██████╔╝╚██████╔╝╚██████╔╝███████╗██║  ██║██║  ██║██║ ╚████║    ╚██████╗██║  ██║██║  ██║██║  ██║   ██║   
+ ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝     ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   
+                                                                     ██                                     
+ ██████╗ ███████╗███████╗██████╗  ██████╗ ██████╗ ██████╗ 
+██╔══██╗██╔════╝██╔════╝██╔══██╗██╔════╝██╔═══██╗██╔══██╗
+██║  ██║█████╗  █████╗  ██████╔╝██║     ██║   ██║██║  ██║
+██║  ██║██╔══╝  ██╔══╝  ██╔═══╝ ██║     ██║   ██║██║  ██║ 
+██████╔╝███████╗███████╗██║     ╚██████╗╚██████╔╝██████╔╝
+╚═════╝ ╚══════╝╚══════╝╚═╝      ╚═════╝ ╚═════╝ ╚═════╝ 
+
+ ██████╗ █████╗ ██████╗ ████████╗     █████╗ ██████╗ ██████╗ 
+██╔════╝██╔══██╗██╔══██╗╚══██╔══╝    ██╔══██╗██╔══██╗██╔══██╗
+██║     ███████║██████╔╝   ██║       ███████║██████╔╝██████╔╝
+██║     ██╔══██║██╔══██╗   ██║       ██╔══██║██╔═══╝ ██╔═══╝ 
+╚██████╗██║  ██║██║  ██║   ██║       ██║  ██║██║     ██║     
+ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝       ╚═╝  ╚═╝╚═╝     ╚═╝  
+*/
